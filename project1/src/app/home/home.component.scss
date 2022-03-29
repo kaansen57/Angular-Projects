@@ -1,0 +1,35 @@
+@import "../../styles";
+.contain {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .note-card {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        max-height: 300px;
+        padding: 1rem 1rem 0 1rem;
+        margin: 2rem 0.5rem 1rem 0.5rem;
+        box-shadow: 4px 6px 17px -3px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        border-top: 5px solid $color-1;
+        cursor: pointer;
+        &-title {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+        &-content {
+            margin-top: 1rem;
+            @extend .note-card-title;
+            -webkit-line-clamp: 8;
+        }
+        &-footer {
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+}

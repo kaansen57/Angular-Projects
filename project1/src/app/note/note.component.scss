@@ -1,0 +1,19 @@
+@import "../../styles";
+.note-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 2rem;
+    .form-control {
+        border: 2px solid #f0f0f0;
+        outline: none;
+        border-radius: 10px;
+        padding: 1rem 1rem;
+        margin: 1rem 0 1rem 0;
+        font-size: 18px;
+        box-shadow: 4px 6px 17px -3px rgba(0, 0, 0, 0.3);
+        &:focus {
+            border-color: $bg-navbar;
+        }
+    }
+}

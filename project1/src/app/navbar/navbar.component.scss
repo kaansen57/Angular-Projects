@@ -1,0 +1,40 @@
+@import '../../styles';
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: $bg-navbar;
+    a {
+        display: flex;
+        align-items: center;
+        color:$text-white;
+        img {
+            margin-right: 0.5rem;
+        }
+        h2 {
+            span {
+                font-style: italic;
+                
+            }
+        }
+    }
+    .add-note{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border: 2px solid $text-white;
+        border-radius: 50px;
+        margin-right: 2rem;
+        transition: .2s ease;
+        position: relative;
+        &:hover{
+            transform: rotate(270deg);
+            background-color: #fff;
+            i{
+                color:$bg-navbar;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+<div class="note-content">
+  <input
+    type="text"
+    [(ngModel)]="note.title"
+    placeholder="Title"
+    class="form-control"
+  />
+  <textarea
+    [(ngModel)]="note.detail"
+    placeholder="Note Detail"
+    class="form-control"
+    name=""
+    id=""
+    cols="30"
+    rows="10"
+  ></textarea>
+  <button class="btn btn-primary" (click)="noteAdd()">
+    <i class="fas fa-save"></i>
+    {{btn.text}}
+  </button>
+</div>

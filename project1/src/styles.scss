@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;500&display=swap");
+
+$color-1:#bae8e8;
+$color-2:#2c698d;
+$color-3:#bbd4ce;
+$color-4:#2d9d96;
+$text-white: #fff;
+$bg-navbar: #1ac0c6;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    font-family: "Mulish", sans-serif;
+    text-decoration: none;
+    outline: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding:.5rem 1rem;
+    margin: 1rem 0;
+    font-size: 18px;
+    transition: .3s ease;
+    cursor: pointer;
+    i{
+        font-size: 25px;
+        margin-right:.5rem;
+    }
+}
+.btn-primary {
+    background-color:$color-4;
+    color: $text-white;
+    &:hover{
+        border: 2px solid $color-4;
+        background-color: $text-white;
+        color:$color-4;
+    }
+}
+.btn-delete{
+    background-color: $color-2;
+    color: $text-white;
+    &:hover{
+        border: 2px solid $color-2;
+        background-color: $text-white;
+        color:$color-2;
+    }
+}
+.btn-edit{
+    background-color: $color-4;
+    color: $text-white;
+    &:hover{
+        border: 2px solid $color-4;
+        background-color: $text-white;
+        color:$color-4;
+    }
+}
+
+.ajs-button{
+    max-width: 250px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding:.5rem 1rem;
+    margin: 1rem 0;
+    font-size: 14px;
+    transition: .3s ease;
+    cursor: pointer;
+    background-color:$color-4;
+    color: $text-white;
+    &:hover{
+        border: 2px solid $color-4;
+        background-color: $text-white;
+        color:$color-4;
+    }
+}

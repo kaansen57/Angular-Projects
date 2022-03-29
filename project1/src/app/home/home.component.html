@@ -1,0 +1,29 @@
+<main class="contain" *ngIf="notes.length > 0; else noData">
+  <div class="note-card" *ngFor="let note of notes">
+    <div routerLink="/detail/{{ note.id }}">
+      <div class="note-card-title">
+        <h2>{{ note.title }}</h2>
+      </div>
+      <div class="note-card-content">
+        <p>{{ note.detail }}</p>
+      </div>
+    </div>
+
+    <div class="note-card-footer">
+      <button class="btn btn-delete" (click)="deleteNote(note.id)">
+        <i class="fas fa-trash"></i>
+        Delete
+      </button>
+      <button class="btn btn-edit" routerLink="/note/{{ note.id }}">
+        <i class="fas fa-edit"></i>
+        Edit
+      </button>
+    </div>
+  </div>
+</main>
+
+<ng-template #noData>
+  <div class="contain" style="height: 80vh">
+    <h1>Data not found !</h1>
+  </div>
+</ng-template>

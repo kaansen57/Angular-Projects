@@ -1,0 +1,2 @@
+# FrontendDaily
+SCSS Practices
