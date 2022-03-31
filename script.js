@@ -4,6 +4,11 @@ let data = [
     title: "Note App",
     url: "https://ng-note-app.netlify.app",
   },
+  {
+    img: "img/2.png",
+    title: "Login - Register App",
+    url: "https://login-register-ng.netlify.app",
+  },
 ];
 
 const cardSection = document.querySelector(".content");

@@ -1,0 +1,30 @@
+<div class="form-container">
+  <form [formGroup]="userForm" (ngSubmit)="register()">
+    <div class="form-container-input">
+      <label for="name">Name</label>
+      <input name="name" type="text" formControlName="userName" />
+    </div>
+    <div class="form-container-input">
+      <label for="surname">Surname</label>
+      <input  name="surname" type="text" formControlName="userSurname" />
+    </div>
+    <div class="form-container-input">
+      <label for="phone">Phone</label>
+      <input name="phone" type="text" formControlName="userPhone" />
+    </div>
+    <div class="form-container-input">
+      <label for="email">Email</label>
+      <input name="email" type="text" formControlName="userMail" />
+    </div>
+    <div class="form-container-input">
+      <label for="password">Password</label>
+      <input name="password" type="password" formControlName="userPass" />
+    </div>
+
+    <button class="btn btn-login">REGISTER</button>
+
+    <div class="register-button">
+      <a routerLink="/login">Click to Login !</a>
+    </div>
+  </form>
+</div>
