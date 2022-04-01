@@ -1,2 +1,2 @@
-# FrontendDaily
-SCSS Practices
+# Angular Projects
+
