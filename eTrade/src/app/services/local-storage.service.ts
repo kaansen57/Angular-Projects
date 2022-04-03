@@ -20,4 +20,17 @@ export class LocalStorageService {
   deleteToken(key: string) {
     localStorage.removeItem(key);
   }
+
+  setItemArray(key:string,value:any){
+    console.log(value);
+    
+    if (localStorage.getItem(key)) {
+      const tempData = this.getItem(key);
+      tempData.push(...value)
+      this.deleteToken(key);
+      localStorage.setItem(key, JSON.stringify(tempData));
+    } else {
+      localStorage.setItem(key, JSON.stringify(value));
+    }
+  }
 }

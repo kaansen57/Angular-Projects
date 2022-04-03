@@ -16,6 +16,7 @@ import { BasketComponent } from './basket/basket.component';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     DetailComponent,
     BasketComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

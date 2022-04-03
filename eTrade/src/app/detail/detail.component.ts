@@ -12,6 +12,7 @@ import { MessageService } from 'primeng/api';
 export class DetailComponent implements OnInit {
   product: Bilgiler[] = [];
   images: any[] = [];
+  userId : string = ''
   
   responsiveOptions: any[] = [
     {
@@ -49,7 +50,16 @@ export class DetailComponent implements OnInit {
   }
 
   addToBasket() {
-     this.basketService.addToBasket().subscribe((data) => {
+    this.userId = JSON.parse(sessionStorage.getItem('user')!).bilgiler.userId;
+    this.localStorageService.setItemArray('basket',this.product)
+    const params = {
+      ref:'c7c2de28d81d3da4a386fc8444d574f2',
+      customerId:this.userId,
+      productId:this.product[0].productId,
+      html:this.product[0].productId
+    }
+
+     this.basketService.addToBasket(params).subscribe((data) => {
       if (data.order[0].durum) {
          this.router.navigate(['/basket']);
         } else {

@@ -9,8 +9,10 @@
         display: flex;
         justify-content: space-evenly;
         @include responsive(desktop) {
+            padding: 1rem;
             overflow-x: scroll;
             justify-content: flex-start;
+            text-align: center;
         }
         li {
             display: flex;

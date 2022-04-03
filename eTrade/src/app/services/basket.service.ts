@@ -7,10 +7,11 @@ import { Basket } from '../models/basket';
 })
 export class BasketService {
   urlPath: string =
-    'https://www.jsonbulut.com/json/orderForm.php?ref=c7c2de28d81d3da4a386fc8444d574f2&customerId=12&productId=12&html=12';
+    'https://www.jsonbulut.com/json/orderForm.php';
+
   constructor(private http: HttpClient) {}
 
-  addToBasket() {
-   return this.http.get<Basket>(this.urlPath);
+  addToBasket(params: any) {
+    return this.http.get<Basket>(this.urlPath, { params: params });
   }
 }

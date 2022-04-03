@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Bilgiler } from '../models/products';
 import { BasketService } from '../services/basket.service';
+import { LocalStorageService } from '../services/local-storage.service';
 
 @Component({
   selector: 'app-basket',
@@ -8,10 +10,12 @@ import { BasketService } from '../services/basket.service';
 })
 export class BasketComponent implements OnInit {
 
-  constructor(private basketService:BasketService) { }
+  basket :Bilgiler[] = []
+  constructor(private basketService:BasketService,private localStorageService:LocalStorageService) { }
 
   ngOnInit(): void {
-    this.basketService.addToBasket().subscribe((data) => console.log(data));
+    this.basket = this.localStorageService.getItem('basket')
+    // this.basketService.addToBasket().subscribe((data) => console.log(data));
   }
 
 }
