@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;600;700;900&display=swap");
+
+@import "./assets/scss/colors";
+@import "./assets/scss/mixins";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: "Montserrat", sans-serif;
+    outline: none;
+    color: $gray-color;
+    font-weight: 500;
+}
+i {
+    color: $secondary-color;
+}
+
+.button-wrapper {
+    display: flex;
+}
+.btn {
+    background-color: transparent;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    margin: 0 0.2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    @include responsive(large) {
+        font-size: 10px;
+        padding: 0.4rem;
+    }
+    &-primary {
+        background-color: $button-primary-color;
+        color: $white-color;
+        &:hover {
+            transform: translateY(-5px);
+            background-color: darken($button-primary-color, 10%);
+            box-shadow: 1px 1px 10px $button-primary-color;
+        }
+    }
+    &-success {
+        background-color: $green-color;
+        color: $white-color;
+        &:hover {
+            transform: translateY(-5px);
+            background-color: darken($green-color, 10%);
+            box-shadow: 1px 1px 10px $green-color;
+        }
+    }
+}

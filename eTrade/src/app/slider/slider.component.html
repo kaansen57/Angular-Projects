@@ -1,0 +1,21 @@
+<div class="slider-container">
+  <p-carousel
+    [value]="categories"
+    styleClass="custom-carousel"
+    [numVisible]="2"
+    [numScroll]="1"
+    [circular]="true"
+    [autoplayInterval]="3000"
+    [responsiveOptions]="responsiveOptions"
+  >
+    <ng-template class="slider" let-category pTemplate="item">
+      <div class="category-item">
+        <div class="category-item-content">
+          <img [src]="category.categoryImage" alt="category" />
+          <h4 class="category-name">{{ category.categoryName }}</h4>
+          <h5 class="category-detail">{{ category.categoryDetail }}</h5>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>

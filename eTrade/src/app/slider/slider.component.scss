@@ -1,0 +1,29 @@
+
+@import "../../assets/scss/colors";
+
+.slider-container{
+    width: 100%;
+    margin: 1rem 0;
+    img{
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .category-item-content{
+        position: relative;
+    }
+    .category-name{
+        color:$black-color;
+        font-weight: 600;
+        position: absolute;
+        left: 1rem;
+        bottom: 2rem;
+        z-index: 99;
+    }
+    .category-detail{
+        color:$black-color;
+        position: absolute;
+        left: 1rem;
+        bottom: 1rem;
+        z-index: 99;
+    }
+}

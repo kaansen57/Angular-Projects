@@ -1,0 +1,49 @@
+<app-menu></app-menu>
+<p-toast position="top-right"></p-toast>
+
+<div class="detail-wrapper">
+  <div class="ads">
+    <img
+      src="https://zebramo.com/static/img/affiliate-banner.b5c3208.png"
+      alt=""
+    />
+  </div>
+  <div class="detail-content" *ngFor="let prod of product">
+    <p-galleria
+      [value]="images"
+      [responsiveOptions]="responsiveOptions"
+      [circular]="true"
+      [showItemNavigators]="true"
+      [showThumbnails]="false"
+      class="galleria"
+    >
+      <ng-template pTemplate="item" let-item>
+        <img [src]="item.normal" />
+      </ng-template>
+    </p-galleria>
+
+    <div class="product-detail">
+      <h2 class="product-detail-title"><b>Ürün :</b> {{ prod.productName }}</h2>
+      <h3 class="product-detail-price">
+        <b> Fiyat : </b> {{ prod.price | currency: "₺" }}
+      </h3>
+      <div class="">
+        <button class="btn btn-success" (click)="addToBasket()">Satın Al</button>
+        <button class="btn">
+          <i
+            class="fas fa-heart"
+            [ngStyle]="{
+              color: prod.likes?.like?.oy_toplam === '0' ? '' : '#6f68ae'
+            }"
+          ></i>
+        </button>
+        <button class="btn">{{ prod.likes?.like?.oy_toplam }}</button>
+      </div>
+      <div class="product-detail-description">
+        <b>Ürün Açıklaması</b>
+        <hr />
+        {{ prod.description }}
+      </div>
+    </div>
+  </div>
+</div>

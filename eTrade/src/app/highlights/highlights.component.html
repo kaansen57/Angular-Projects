@@ -1,0 +1,19 @@
+
+<div class="highlights-wrapper">
+    <div class="highlight-header">
+        <h3 class="highlight-title">Öne Çıkanlar</h3>
+        <h6>Daha Fazla Göster</h6>
+    </div>
+    <hr>
+    <div class="highlight-content">
+        <a routerLink="/detail" (click)="productDetail(i)" class="product" *ngFor="let product of products;index as i">
+            <img [src]="product.images![0].thumb" alt="">
+            <h4 class="product-title">
+                {{product.productName}}
+            </h4>
+            <h5 class="product-price">
+                {{product.price|currency:'₺'}}
+            </h5>
+        </a>
+    </div>
+</div>

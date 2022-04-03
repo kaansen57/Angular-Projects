@@ -1,0 +1,10 @@
+<div class="menu-wrapper">
+    <ul>
+        <a href="" *ngFor="let category of categories">
+            <li>
+                <i [class]="category.categoryIcon"></i>
+                <h4>{{category.categoryName}}</h4>
+            </li>
+        </a>
+    </ul>
+</div>

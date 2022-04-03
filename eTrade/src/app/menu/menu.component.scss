@@ -1,0 +1,37 @@
+@import "../../assets/scss/colors";
+@import "../../assets/scss/mixins";
+
+.menu-wrapper {
+    width: 100%;
+    padding: 0 4rem;
+    margin: 2rem 0;
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+        @include responsive(desktop) {
+            overflow-x: scroll;
+            justify-content: flex-start;
+        }
+        li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+            padding: 1rem;
+            transition: color 0.5s ease;
+            i {
+                color: lighten($black-color, 30%);
+                margin-bottom: 0.5rem;
+                font-size: 20px;
+            }
+
+            &:hover {
+                border-radius: 20px;
+                box-shadow: 1px 1px 10px $button-primary-color;
+            }
+            &:hover i {
+                color: lighten($button-primary-color, 5%);
+            }
+        }
+    }
+}
