@@ -50,6 +50,11 @@ export class DetailComponent implements OnInit {
   }
 
   addToBasket() {
+    //totalPrice api'den gelmediği için ilk değer atamasını 
+    //1 adetten baz alarak ürünün birim fiyatını atadık
+    //adete göre fiyat değişimi basket componentinde gerçekleşir
+    this.product[0].totalPrice = Number.parseInt(this.product[0].price!); 
+
     this.userId = JSON.parse(sessionStorage.getItem('user')!).bilgiler.userId;
     this.localStorageService.setItemArray('basket',this.product)
     const params = {

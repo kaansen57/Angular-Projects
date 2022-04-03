@@ -1,4 +1,49 @@
 <app-menu></app-menu>
 <div class="basket-wrapper">
-
+  <h2 class="basket-title">
+    <i style="color: #616161" class="fas fa-shopping-basket"></i> Sepetim
+  </h2>
+  <div class="basket-detail">
+    <div class="basket-table" *ngIf="basket; else noData">
+      <div class="basket-row">
+        <h4>Ürün detayı</h4>
+        <h4>Fiyat</h4>
+        <h4>Adet</h4>
+        <h4>Toplam</h4>
+        <h4></h4>
+      </div>
+      <div class="basket-row" *ngFor="let product of basket;index as i">
+        <div class="product-details">
+          <img [src]="product.images![0].thumb" alt="" />
+          <h4>{{ product.productName }}</h4>
+        </div>
+        <div class="price">
+          <h4>{{ product.price }}</h4>
+        </div>
+        <div class="quantity">
+          <select (change)="onChange($event,i)" class="quantity-select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <div class="total">
+          <h4>{{ product.totalPrice }}</h4>
+        </div>
+        <div class="delete">
+          <a href="#">
+            <i class="fas fa-times-circle"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<ng-template #noData >
+  <div class="no-data">
+    <h2 >Ürün bulunamadı !</h2>
+    <button routerLink="/" class="btn btn-success">Alışverişe Başla</button>
+  </div>
+</ng-template>

@@ -14,6 +14,7 @@ export interface Bilgiler {
   brief?: string;
   description?: string;
   price?: string;
+  totalPrice?: number;
   saleInformation?: SaleInformation;
   campaign?: Campaign;
   campaignTitle?: string;
