@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  templateUrl: 'login.component.html',
+  styleUrls: ['login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   email: string = '';
@@ -16,14 +17,14 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     const user = JSON.parse(sessionStorage.getItem('user')!);
-    if(user){
-      this.router.navigate([''])
+    if (user) {
+      this.router.navigate(['']);
     }
   }
 
   userLogin() {
     const params = {
-      ref: 'c7c2de28d81d3da4a386fc8444d574f2',
+      ref: environment.ref,
       userEmail: this.email,
       userPass: this.password,
       face: 'no',
@@ -35,7 +36,8 @@ export class LoginComponent implements OnInit {
       if (status) {
         sessionStorage.setItem('user', JSON.stringify(user));
         this.router.navigate(['/']);
-      } 
+        location.reload();
+      }
     });
   }
 }

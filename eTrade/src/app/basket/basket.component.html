@@ -1,10 +1,10 @@
-<app-menu></app-menu>
+<!-- <app-menu></app-menu> -->
 <div class="basket-wrapper">
   <h2 class="basket-title">
     <i style="color: #616161" class="fas fa-shopping-basket"></i> Sepetim
   </h2>
   <div class="basket-detail">
-    <div class="basket-table" *ngIf="basket; else noData">
+    <div class="basket-table" *ngIf="basket.length > 0 ; else noData">
       <div class="basket-row">
         <h4>Ürün detayı</h4>
         <h4>Fiyat</h4>
@@ -12,7 +12,7 @@
         <h4>Toplam</h4>
         <h4></h4>
       </div>
-      <div class="basket-row" *ngFor="let product of basket;index as i">
+      <div class="basket-row" *ngFor="let product of basket; index as i">
         <div class="product-details">
           <img [src]="product.images![0].thumb" alt="" />
           <h4>{{ product.productName }}</h4>
@@ -21,7 +21,7 @@
           <h4>{{ product.price }}</h4>
         </div>
         <div class="quantity">
-          <select (change)="onChange($event,i)" class="quantity-select">
+          <select (change)="onChange($event, i)" class="quantity-select">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -29,21 +29,35 @@
             <option value="5">5</option>
           </select>
         </div>
-        <div class="total">
+        <div class="total-price">
           <h4>{{ product.totalPrice }}</h4>
         </div>
         <div class="delete">
-          <a href="#">
-            <i class="fas fa-times-circle"></i>
+          <a (click)="deleteProduct(i)">
+            <i style="font-size: 24px" class="fas fa-times-circle"></i>
           </a>
         </div>
+      </div>
+      <hr />
+
+      <div class="total">
+        <h3>
+          Ürünlerin Toplam Fiyatı : <span>{{ totalPrice() }}₺</span>
+        </h3>
+        <button class="btn btn-success">
+          <i
+            style="color: #fff; margin-right: 0.5rem"
+            class="far fa-credit-card"
+          ></i
+          >Satın Al
+        </button>
       </div>
     </div>
   </div>
 </div>
-<ng-template #noData >
+<ng-template #noData>
   <div class="no-data">
-    <h2 >Ürün bulunamadı !</h2>
+    <h2>Ürün bulunamadı !</h2>
     <button routerLink="/" class="btn btn-success">Alışverişe Başla</button>
   </div>
 </ng-template>

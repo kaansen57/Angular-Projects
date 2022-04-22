@@ -30,6 +30,7 @@
         background-color: #fff;
         padding: 1rem;
         width: 50%;
+        height: 600px;
         @include responsive(desktop) {
             width: 100%;
         }

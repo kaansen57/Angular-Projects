@@ -4,6 +4,7 @@ import { Bilgiler } from '../models/products';
 import { BasketService } from '../services/basket.service';
 import { LocalStorageService } from '../services/local-storage.service';
 import { MessageService } from 'primeng/api';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -50,15 +51,17 @@ export class DetailComponent implements OnInit {
   }
 
   addToBasket() {
-    //totalPrice api'den gelmediği için ilk değer atamasını 
+    //totalPrice ve quantity api'den gelmediği için ilk değer atamasını 
     //1 adetten baz alarak ürünün birim fiyatını atadık
     //adete göre fiyat değişimi basket componentinde gerçekleşir
     this.product[0].totalPrice = Number.parseInt(this.product[0].price!); 
+    this.product[0].quantity = 1;
 
     this.userId = JSON.parse(sessionStorage.getItem('user')!).bilgiler.userId;
+    
     this.localStorageService.setItemArray('basket',this.product)
     const params = {
-      ref:'c7c2de28d81d3da4a386fc8444d574f2',
+      ref:environment.ref,
       customerId:this.userId,
       productId:this.product[0].productId,
       html:this.product[0].productId

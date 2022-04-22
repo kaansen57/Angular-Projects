@@ -14,14 +14,10 @@ export class DetailComponent implements OnInit {
   constructor(private activeRouter: ActivatedRoute,private noteService:NoteService) {}
 
   ngOnInit(): void {
-    this.activeRouter.params.subscribe((param) => {
-      if (param['id']) {
-        const id = param['id'];
-        this.noteService.notes.forEach((note) => {
-          if (note.id == id) {
-            this.noteDetail = note;
-          }
-        });
+    this.noteService.notes.forEach((note) => {
+      const id = this.activeRouter.snapshot.params['id'];
+      if (note.id == id) {
+        this.noteDetail = note;
       }
     });
   }

@@ -66,13 +66,40 @@
                 font-size: 28px;
             }
         }
-
+        #userMenu{
+            display: none;
+            &:checked + label > ul {
+                display: block;
+                position: absolute;
+                bottom: -50px;
+                z-index: 99;
+            }
+        }
         .avatar {
             display: flex;
+            flex-direction: column;
             align-items: center;
             border: 1px solid $button-primary-color;
             padding: 0.2rem;
             border-radius: 50px;
+            position: relative;
+            ul{
+                display: none;
+                li{
+                    width: max-content;
+                    padding: .5rem 2rem;
+                    background-color: $white-color;
+                    border: 1px solid $gray-color;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    &:hover{
+                        color:$primary-color;
+                        i{
+                            color:$primary-color;
+                        }
+                    }
+                }
+            }
             img {
                 height: 40px;
                 width: 40px;

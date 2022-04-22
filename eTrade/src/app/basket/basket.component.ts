@@ -17,17 +17,29 @@ export class BasketComponent implements OnInit {
     private router: Router
   ) {}
   onChange(event: any, index: number) {
-    console.log(index);
-
-    this.quantity = event.target.value;
+    this.basket[index].quantity = event.target.value;
     this.basket[index].totalPrice =
-      this.quantity * Number.parseInt(this.basket[index].price!);
+      this.basket[index].quantity! * Number.parseInt(this.basket[index].price!);
   }
+
   ngOnInit(): void {
     if (sessionStorage.getItem('user')) {
       this.basket = this.localStorageService.getItem('basket');
     } else {
       this.router.navigate(['/login']);
     }
+  }
+
+  totalPrice() {
+    let totalPrice = 0;
+    this.basket.forEach((product) => {
+      totalPrice += product.totalPrice!
+    });
+    return totalPrice;
+  }
+  deleteProduct(index:number){
+    this.basket.splice(index,1);
+    this.localStorageService.deleteToken('basket');
+    this.localStorageService.setItemArray('basket',this.basket)
   }
 }

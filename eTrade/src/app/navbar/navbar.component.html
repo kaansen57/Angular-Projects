@@ -11,7 +11,7 @@
       <input type="text" class="search" placeholder="Ara..." />
       <i class="fas fa-search"></i>
     </div>
-    <div class="button-wrapper">
+    <div class="button-wrapper" *ngIf="!isLogin">
       <button class="btn btn-primary">Üye Olun!</button>
       <button routerLink="/login" class="btn btn-primary">Giriş Yapın!</button>
     </div>
@@ -20,11 +20,15 @@
     <a href="#">
       <i class="fas fa-bell"></i>
     </a>
-    <a href="#">
-      <i class="fas fa-envelope"></i>
+    <a routerLink="/basket">
+      <i class="pi pi-shopping-bag mr-4 p-text-secondary" pBadge style="font-size: 2rem" [value]="basketLen()" severity="success"></i>
     </a>
-    <a routerLink="/basket" class="avatar">
+    <input type="checkbox" id="userMenu" />
+    <label  for="userMenu" class="avatar">
       <img src="../../assets/img/avatar.png" alt="avatar" />
-    </a>
+      <ul *ngIf="isLogin">
+          <li (click)="exit()" ><i class="fas fa-sign-out-alt"></i> Çıkış Yap</li>
+      </ul>
+    </label>
   </div>
 </nav>

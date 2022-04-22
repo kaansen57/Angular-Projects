@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { Products } from '../models/products';
 
 @Injectable({
@@ -7,7 +8,7 @@ import { Products } from '../models/products';
 })
 export class HighlightsService {
 
-  urlPath:string = "https://www.jsonbulut.com/json/product.php?ref=c7c2de28d81d3da4a386fc8444d574f2&start=0";
+  urlPath:string = `https://www.jsonbulut.com/json/product.php?ref=${environment.ref+'&start=0'}`;
 
   constructor(private http:HttpClient) { }
 

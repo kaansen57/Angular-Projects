@@ -17,6 +17,7 @@ import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
+import {BadgeModule} from 'primeng/badge';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     FormsModule,
     ToastModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BadgeModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],

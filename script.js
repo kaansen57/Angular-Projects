@@ -9,6 +9,16 @@ let data = [
     title: "Login - Register App",
     url: "https://login-register-ng.netlify.app",
   },
+  {
+    img: "img/3.png",
+    title: "E-Trade",
+    url: "https://etrade-ng.netlify.app",
+  },
+  {
+    img: "img/4.png",
+    title: "Etiya Crm Lite",
+    url: "https://etiya-crm-lite.netlify.app",
+  },
 ];
 
 const cardSection = document.querySelector(".content");

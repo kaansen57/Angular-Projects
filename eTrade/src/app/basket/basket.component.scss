@@ -1,8 +1,10 @@
+@import "../../assets/scss/colors";
 .basket-wrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 1rem 0;
     .basket-title {
         margin-bottom: 2rem;
     }
@@ -49,6 +51,29 @@
     font-size: 30px;
     font-weight: 700;
     button {
+        margin: 1rem 0;
+    }
+}
+hr {
+    margin: 1rem 0;
+}
+.total {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 2rem;
+    align-items: flex-end;
+    h3 {
+        span {
+            font-size: 24px;
+            font-weight: 700;
+            color: $black-color;
+            text-decoration: underline;
+        }
+    }
+    button {
+        font-size: 22px;
+        padding: 1rem;
         margin: 1rem 0;
     }
 }
